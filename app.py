@@ -118,6 +118,7 @@ def display_player_names(team, team_mascot):
     print(player_str)
     print()
 
+    # print the names of the guardians
     guardian_str = ''
     print("Guardians:")
     for player in team:
@@ -135,28 +136,27 @@ def menu():
         print("BASKETBALL TEAM STATS TOOL\n")
         print("---- MENU ----\n")
         print("Here are your choices:\n")
-        choice = int(input("1) Display Team Stats\n2) Quit\n\nEnter an Option > "))
-        if choice == 1:
-            print("1) Panthers")
-            print("2) Bandits")
-            print("3) Warriors\n")
-            team_chosen = int(input("Enter an option > "))
-            if team_chosen == 1:
-                mascot = "Panther"
-                display_player_names(panthers, mascot)
-            elif team_chosen == 2:
-                mascot = "Bandit"
-                display_player_names(bandits, mascot)
-            elif team_chosen == 3:
-                mascot = "Warrior"
-                display_player_names(warriors, mascot)
-            input("Press ENTER to continue....\n")
-        elif choice == 2:
-            break
-
-            
-
-
+        try:
+            choice = int(input("1) Display Team Stats\n2) Quit\n\nEnter an Option > "))
+            if choice == 1:
+                print("1) Panthers")
+                print("2) Bandits")
+                print("3) Warriors\n")
+                team_chosen = int(input("Enter an option > "))
+                if team_chosen == 1:
+                    mascot = "Panther"
+                    display_player_names(panthers, mascot)
+                elif team_chosen == 2:
+                    mascot = "Bandit"
+                    display_player_names(bandits, mascot)
+                elif team_chosen == 3:
+                    mascot = "Warrior"
+                    display_player_names(warriors, mascot)
+                input("Press ENTER to continue....\n")
+            elif choice == 2:
+                break
+        except ValueError:
+            print("Please enter a valid value\n")
 
 
 if __name__ == '__main__' :
