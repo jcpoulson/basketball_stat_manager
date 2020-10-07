@@ -1,4 +1,5 @@
 import constants
+import copy
 
 
 new_player_data = []
@@ -8,7 +9,7 @@ warriors = []
 
 
 def clean_data():
-    players = constants.PLAYERS
+    players = copy.deepcopy(constants.PLAYERS)
 
     for player in players:
         # clean the height data
